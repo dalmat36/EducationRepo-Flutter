@@ -36,6 +36,12 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: new BottomNavigationBar(items: [
+        new BottomNavigationBarItem(icon: new Icon(Icons.add), title: new Text("add")),
+        new BottomNavigationBarItem(icon: new Icon(Icons.print), title: new Text("print")),
+        new BottomNavigationBarItem(icon: new Icon(Icons.mail), title: new Text("mail"))
+      ],
+      onTap: (int i) => debugPrint("Pressed $i")),
     );
   }
 }
