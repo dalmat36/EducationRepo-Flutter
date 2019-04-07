@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
-import './ui/Home.dart';
+import 'package:intro_containers/ui/CustomLoginForm.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(Login());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  var title = "Gestures";
+class Login extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    final appTitle = "Login";
     return MaterialApp(
-      title: title,
-      home: new Home(title: title),
+      title: appTitle,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(appTitle),
+          //    centerTitle: true,
+        ),
+        backgroundColor: Colors.blueGrey,
+        body: CustomLoginForm(),
+      )
     );
   }
 }
