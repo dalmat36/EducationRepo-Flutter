@@ -5,8 +5,15 @@ class CustomLoginForm extends StatefulWidget {
   _CustomLoginFormState createState() => _CustomLoginFormState();
 }
 
+class _LoginData {
+  String name = "";
+  String password = "";
+}
+
 class _CustomLoginFormState extends State<CustomLoginForm> {
   final _formKey = GlobalKey<FormState>();
+
+  _LoginData _data = new _LoginData();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +39,8 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
                   if (value.isEmpty) {
                     return "Please enter name";
                   } else {
-                    print("All is good");
+                    _data.name = value;
+                    print("Data: ${_data.name}");
                   }
                 },
               ),
@@ -50,7 +58,8 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
                   if (value.isEmpty) {
                     return "Please enter password";
                   } else {
-                    print("All is good");
+                    _data.password = value;
+                    print("Password: ${_data.password}");
                   }
                 },
               ),
@@ -86,6 +95,10 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
                   )
                 ],
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Center(child: Text("Hello there", style: TextStyle(fontWeight:  FontWeight.bold, color: Colors.white, fontSize: 19.0),)),
             )
           ],
         ))]);
